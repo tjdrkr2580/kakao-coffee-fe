@@ -1,11 +1,13 @@
 import styled from "@emotion/styled";
 import React from "react";
 import Header from "./Header";
+import { PageMargin } from "@/styles/mixins";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <RootWrapper>
       <Header />
+      <PageMargin />
       {children}
     </RootWrapper>
   );

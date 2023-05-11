@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <HeadInfo />
-      <div></div>
+      <div>안녕</div>
     </>
   );
 };
