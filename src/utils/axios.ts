@@ -3,7 +3,7 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 export default class Axios {
   private axiosInstance: AxiosInstance;
 
-  constructor(url: string) {
+  constructor() {
     this.axiosInstance = axios.create({
       baseURL: "https://test-api.sparta99.shop",
       withCredentials: true,
