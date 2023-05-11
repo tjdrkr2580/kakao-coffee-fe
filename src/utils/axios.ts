@@ -5,7 +5,7 @@ export default class Axios {
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: "https://test-api.sparta99.shop",
+      baseURL: process.env.NEXT_PUBLIC_API_URL,
       withCredentials: true,
     });
   }
