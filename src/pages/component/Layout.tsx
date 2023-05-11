@@ -17,6 +17,7 @@ const RootWrapper = styled.div`
   position: relative;
   width: 100vw;
   min-height: 100vh;
+  padding: 0 1.2rem;
 `;
 
 export default Layout;

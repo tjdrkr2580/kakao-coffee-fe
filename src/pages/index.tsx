@@ -5,7 +5,6 @@ import { homeProps } from "@/types/data";
 import styled from "@emotion/styled";
 
 const Home = ({ beverages, popularBeverages }: homeProps) => {
-  console.log(beverages, popularBeverages);
   return (
     <>
       <HeadInfo />
