@@ -1,4 +1,4 @@
-import { API_PATH } from "@/pages/constant/path";
+import { API_PATH } from "@/constant/path";
 import Axios from "./axios";
 
 const axios = new Axios();
