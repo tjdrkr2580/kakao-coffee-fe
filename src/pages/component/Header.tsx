@@ -1,3 +1,4 @@
+import Button from "@/element/Button";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import React from "react";
@@ -7,8 +8,9 @@ const Header = () => {
     <HeaderWrapper>
       <h1>Kakao Coffee</h1>
       <HeaderLists>
-        <Link href="/">네비1</Link>
+        <Link href="/">Home</Link>
         <Link href="/coffee">네비2</Link>
+        <Button>로그인</Button>
       </HeaderLists>
     </HeaderWrapper>
   );
