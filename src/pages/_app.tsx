@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-import styled from "@emotion/styled";
 import type { AppProps } from "next/app";
 import Layout from "./component/Layout";
 
