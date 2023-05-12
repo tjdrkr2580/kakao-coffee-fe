@@ -22,6 +22,7 @@ const HomeWrapper = styled.section`
   width: 95vw;
   max-width: 120rem;
   height: 100%;
+  margin: 0 auto;
 `;
 
 export async function getServerSideProps() {

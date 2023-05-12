@@ -1,16 +1,15 @@
 import Button from "@/element/Button";
-import { RootState } from "@/store/store";
-import { toggleDarkmode } from "@/store/themeReducer";
+import { isDarkModeState } from "@/utils/atoms";
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { BsSun, BsMoon } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
+import { BsSun } from "react-icons/bs";
+import { useRecoilState } from "recoil";
 
 const Header = () => {
-  const dispatch = useDispatch();
-  const darkmode = useSelector((state: RootState) => state.theme.darkmode);
-  const handleToggle = () => {
-    dispatch(toggleDarkmode());
+  const [darkmode, setDarkmode] = useRecoilState(isDarkModeState);
+  const toggleMode = () => {
+    setDarkmode(!darkmode);
+    window.localStorage.setItem("isDarkmode", String(darkmode));
   };
   return (
     <HeaderWrapper>
@@ -22,10 +21,10 @@ const Header = () => {
         <li>
           <Link href="/coffee">네비2</Link>
         </li>
-        <li onClick={handleToggle}>
-          {darkmode === false ? <BsSun size={22} /> : <BsMoon size={22} />}
+        <li onClick={toggleMode}>
+          <BsSun size={22} />
         </li>
-        <Button>시작하기</Button>
+        <Button>로그인</Button>
       </HeaderLists>
     </HeaderWrapper>
   );
@@ -38,11 +37,12 @@ const HeaderWrapper = styled.header`
   align-items: center;
   justify-content: space-around;
   position: fixed;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   top: 0;
   height: 7rem;
   padding: 0.8rem 0;
-
+  backdrop-filter: 1rem;
   h1 {
     font-family: var(--paci);
     font-size: 2.65rem;
