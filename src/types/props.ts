@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 export type headInfoProps = {
   title: string;
@@ -8,4 +8,5 @@ export type headInfoProps = {
 export type buttonTypes = {
   children: ReactNode;
   color: string;
+  onClick: () => void;
 };

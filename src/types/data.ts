@@ -1,16 +1,16 @@
-type beverageType = {
+export type beverageType = {
   beverageId: number;
   beverageName: string;
   beverageCost: number;
 };
 
-type PopularBeverageType = {
+export type PopularBeverageType = {
   beverageId: number;
   beverageName: string;
   saleCount: number;
 };
 
 export interface homeProps {
-  beverages: beverageType;
-  popularBeverages: PopularBeverageType;
+  beverages: beverageType[];
+  popularBeverages: PopularBeverageType[];
 }

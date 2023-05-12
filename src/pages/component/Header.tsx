@@ -1,15 +1,22 @@
 import Button from "@/element/Button";
-import { isDarkModeState } from "@/utils/atoms";
+import { isDarkModeState, modalState } from "@/utils/atoms";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import { BsSun } from "react-icons/bs";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { modalTypeState } from "../../utils/atoms";
 
 const Header = () => {
   const [darkmode, setDarkmode] = useRecoilState(isDarkModeState);
+  const setModal = useSetRecoilState(modalState);
+  const setModalType = useSetRecoilState(modalTypeState);
   const toggleMode = () => {
     setDarkmode(!darkmode);
     window.localStorage.setItem("isDarkmode", String(darkmode));
+  };
+  const onloginModal = () => {
+    setModalType("sign");
+    setModal(true);
   };
   return (
     <HeaderWrapper>
@@ -24,7 +31,7 @@ const Header = () => {
         <li onClick={toggleMode}>
           <BsSun size={22} />
         </li>
-        <Button>로그인</Button>
+        <Button onClick={onloginModal}>로그인</Button>
       </HeaderLists>
     </HeaderWrapper>
   );

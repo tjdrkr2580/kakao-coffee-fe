@@ -2,8 +2,12 @@ import React from "react";
 import styled from "@emotion/styled";
 import { buttonTypes } from "@/types/props";
 
-const Button = ({ children, color }: buttonTypes) => {
-  return <CustomButton color={color}>{children}</CustomButton>;
+const Button = ({ children, color, onClick }: buttonTypes) => {
+  return (
+    <CustomButton onClick={onClick} color={color}>
+      {children}
+    </CustomButton>
+  );
 };
 
 const CustomButton = styled.button`
@@ -24,6 +28,7 @@ const CustomButton = styled.button`
 
 Button.defaultProps = {
   color: "#ffdc00",
+  onClick: () => {},
 };
 
 export default Button;
