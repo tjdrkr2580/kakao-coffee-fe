@@ -20,7 +20,7 @@ const HomeWrapper = styled.section`
   flex-direction: column;
   gap: 10rem;
   width: 95vw;
-  max-width: 130rem;
+  max-width: 120rem;
   height: 100%;
 `;
 

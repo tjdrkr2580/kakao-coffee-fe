@@ -14,10 +14,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 };
 
 const RootWrapper = styled.div`
-  position: relative;
   width: 100vw;
   min-height: 100vh;
   padding: 0 1.2rem;
+  background: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.textColor};
+  li > a {
+    color: ${(props) => props.theme.textColor};
+  }
 `;
 
 export default Layout;

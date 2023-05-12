@@ -4,6 +4,13 @@
   box-sizing: border-box;
   font-family: Pretendard;
   font-size: 10px;
+  transition: 0.15s background;
+}
+
+@media (max-width: 600px) {
+  * {
+    font-size: 8px;
+  }
 }
 
 ul {

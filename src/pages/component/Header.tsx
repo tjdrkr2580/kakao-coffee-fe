@@ -1,9 +1,17 @@
 import Button from "@/element/Button";
+import { RootState } from "@/store/store";
+import { toggleDarkmode } from "@/store/themeReducer";
 import styled from "@emotion/styled";
 import Link from "next/link";
-import React from "react";
+import { BsSun, BsMoon } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const darkmode = useSelector((state: RootState) => state.theme.darkmode);
+  const handleToggle = () => {
+    dispatch(toggleDarkmode());
+  };
   return (
     <HeaderWrapper>
       <h1>Kakao Coffee</h1>
@@ -14,7 +22,10 @@ const Header = () => {
         <li>
           <Link href="/coffee">네비2</Link>
         </li>
-        <Button>로그인</Button>
+        <li onClick={handleToggle}>
+          {darkmode === false ? <BsSun size={22} /> : <BsMoon size={22} />}
+        </li>
+        <Button>시작하기</Button>
       </HeaderLists>
     </HeaderWrapper>
   );
@@ -33,6 +44,7 @@ const HeaderWrapper = styled.header`
   padding: 0.8rem 0;
 
   h1 {
+    font-family: var(--paci);
     font-size: 2.65rem;
   }
 `;
@@ -42,6 +54,7 @@ const HeaderLists = styled.ul`
   gap: 1.8rem;
   align-items: center;
   li {
+    cursor: pointer;
     a {
       font-size: 1.45rem;
     }
